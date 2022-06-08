@@ -33,7 +33,8 @@ namespace GamesPlay
             modelBuilder.Entity<GameUser>().HasKey(e => new { e.UserId, e.GameId });
             modelBuilder.Entity<Comment>().Property(c => c.Content).IsRequired();
             modelBuilder.Entity<Comment>().HasOne(c => c.User).WithMany(u => u.Comments).HasForeignKey(c => c.UserId);
-          
+            modelBuilder.Entity<Comment>().HasOne(c => c.Game).WithMany(u => u.Comments).HasForeignKey(c => c.GameId);
+
         }
 
 

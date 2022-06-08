@@ -15,5 +15,7 @@ namespace GamesPlay.Models
  
         public virtual ICollection<GameUser> GamesUsers { get; set; }
 
+        public virtual ICollection<Comment> Comments { get; set; }
+
     }
 }

@@ -52,19 +52,19 @@ namespace GamesPlay
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GamesPlay v1"));
             }
 
-          
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-
-            app.UseCors(builder=> builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
-			app.UseHttpsRedirection();
+            
+            app.UseHttpsRedirection();
         }
     }
 }

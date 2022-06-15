@@ -1,10 +1,11 @@
 ﻿using GamesPlay.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace GamesPlay.Controllers
 {
-
+    
     [ApiController]
     [Route("[controller]")]
     public class GenericController<T>:ControllerBase where T : class
